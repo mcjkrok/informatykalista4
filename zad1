@@ -1,0 +1,66 @@
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    int popr, popr_o;
+    int ilosc_ocen;
+    float ocena;
+    float oceny[20];
+    cout << "Podaj ilosc ocen ktore chcesz wprowadzic; ";
+    cin >> ilosc_ocen;
+
+
+    for (int i=0; i<ilosc_ocen; i++){
+        cout << "Wpisz ocene: ";
+        cin >> ocena;
+
+        while (ocena !=2 && ocena !=3 && ocena !=3.5 && ocena !=4 && ocena !=4.5 && ocena !=5 && ocena !=5.5)
+        {
+
+            cout << "Niepoprawna ocen, wpisz jeszcze raz: ";
+            cin >> ocena;
+
+        }
+        oceny[i] = ocena;
+
+    }
+    cout << "Wprowadziles nastepujace oceny: " << endl;
+    for (int j = 0; j < ilosc_ocen; j++)
+    {
+        cout << j+1 << ". "  << oceny[j] << endl;
+    }
+
+
+    while (true)
+    {
+        char dec;
+        cout << "Chcesz wprowadzic zmiany w tablicy? Jesli nie, wpisz 'Q' ";
+        cin >> dec;
+        if (dec!='q')
+        {
+            cout << "Wpisz liczbe porzadkowa: ";
+            int popr, popr_o;
+            cin >> popr;
+            cout << "Wpisz poprawiona ocene:";
+            cin >> popr_o;
+            while (popr_o !=2 && popr_o !=3 && popr_o !=3.5 && popr_o !=4 && popr_o !=4.5 && popr_o !=5 && popr_o !=5.5)
+            {
+
+                cout << "Niepoprawna ocen, wpisz jeszcze raz: ";
+                cin >> popr_o;
+
+            }
+            oceny[popr-1]=popr_o;
+
+            for (int j = 0; j < ilosc_ocen; j++)
+            {
+                cout << j+1 << ". "  << oceny[j] << endl;
+            }
+        }
+        break;
+    }
+
+    cout << endl;
+    return 0;
+}
