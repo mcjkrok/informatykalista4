@@ -1,3 +1,4 @@
+zad 1
 #include <iostream>
 
 using namespace std;
@@ -64,3 +65,53 @@ int main()
     cout << endl;
     return 0;
 }
+
+zad 2
+
+a)
+#include <iostream> using namespace std;
+Int main()
+{
+   Int dec = 15;
+   Int bin = 0b0110;
+   Int oct = 011;
+   Int hex = OxAF;
+
+   Cout << „Wartości zmiennych:” << endl;
+   Cout << „dec = „ << dec << endl;
+   Cout << „bin = „ << bin << endl;
+   Cout << „oct = „ << oct << endl;
+   Cout << „hex = „ << hex << endl;
+}
+
+
+b)
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int liczba, n;
+
+    cout << "Podaj liczbe: ";
+    cin >> liczba;
+
+    cout << "Podaj numer bitu (od 0 do 31): ";
+    cin >> n;
+
+    int nty_bit = (liczba >> n) & 1;
+    cout << "n-ty bit = " << nty_bit << endl;
+
+    bool czy_parzysta = !(liczba & 1);
+    cout << "Liczba jest " << (czy_parzysta ? "parzysta" : "nieparzysta") << endl;
+
+    int liczba_uzupelniona = liczba | (1 << n);
+    cout << "Liczba z n-tym bitem ustawionym na 1 = " << liczba_uzupelniona << endl;
+
+    int liczba_wyczyszczona = liczba & ~(1 << n);
+    cout << "Liczba z n-tym bitem ustawionym na 0 = " << liczba_wyczyszczona << endl;
+
+    return 0;
+}
+
+
